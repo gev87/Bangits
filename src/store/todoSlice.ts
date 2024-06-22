@@ -27,7 +27,6 @@ const todoSlice = createSlice({
 		updateTodo: (state, action: PayloadAction<Todo>) => {
 			const index = state.todos.findIndex((todo) => todo.id === action.payload.id);
 			if (index !== -1) {
-				// state.todos[index] = action.payload;
 				const now = new Date().toISOString();
 				const updatedTodo = { ...action.payload };
 					if (
@@ -56,7 +55,7 @@ const todoSlice = createSlice({
 		checkOverdue: (state) => {
 			const now = new Date().toISOString();
 			state.todos.forEach((todo) => {
-				if (todo.deadline && todo.deadline < now && todo.status !== "completed") {
+				if (todo.deadline && todo.deadline < now && todo.status === "pending") {
 					todo.status = "overdue";
 				}
 			});
