@@ -1,0 +1,9 @@
+.card {
+	margin: 10px 0;
+	width: 300px;
+	height: 100%;
+}
+
+.cardActions {
+	justify-content: space-between;
+}
