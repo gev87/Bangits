@@ -1,11 +1,9 @@
 import  { FC, SyntheticEvent, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Todo, checkOverdue } from "./store/todoSlice";
-import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
-import TrashList from "./components/TrashList";
 import { Container, Fab, Tabs, Tab, Box } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { TodoForm, TodoList, TrashList } from "./components";
 import styles from "./App.module.css";
 
 
@@ -30,7 +28,7 @@ const App: FC = () => {
 	};
 
 	useEffect(() => {
-		dispatch(checkOverdue());
+		if (!showForm) dispatch(checkOverdue());
 	}, [showForm, dispatch]);
 
 	return (

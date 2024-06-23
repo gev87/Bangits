@@ -12,7 +12,7 @@ interface TodoListProps {
 const TodoList: FC<TodoListProps> = ({ onEdit }) => {
   const todos = useSelector((state: RootState) => state.todos.todos);
   return (
-    <Grid container spacing={3} justifyContent="center">
+    <Grid container spacing={3}>
       {todos
         .filter((todo) => todo.status !== "removed")
         .map((todo) => (

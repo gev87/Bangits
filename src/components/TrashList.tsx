@@ -18,7 +18,7 @@ const TrashList: FC = () => {
   }
 
   return (
-      <Grid container spacing={3} justifyContent="center">
+      <Grid container spacing={3}>
         {todos.map((todo) => (
           <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={todo.id}>
             <TrashItem todo={todo}></TrashItem>
